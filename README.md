@@ -1,3 +1,3 @@
 # training-app
 
-Please use jspm@0.17.X
+Please use `jspm@0.17.X`
