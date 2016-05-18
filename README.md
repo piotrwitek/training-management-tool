@@ -1,10 +1,10 @@
 # JavaScript Workshops Project
 
-### Done:
+### Done
 - stworzenie struktury nowego projektu i konfiguracja od zera
 - stworzenie pierwszego komponentu „TodoList” oraz odpalenie go jako komponent react w przegladarce
 
-### Todo:
+### Todo
 - add module hot reload to the project
 - add Component Store to example TodoList to persist component state
 - create view to display trainings data
@@ -13,12 +13,14 @@
 - css styling
 …
 
-### Install commands:
-Npm install
-Jspm install - `jspm@0.17.X`
-Typings install
+### Install commands
+  `npm install`
+  
+  `jspm install` - jspm@0.17.X
+  
+  `typings install`
 
-### Dev server run command:
+### Dev server run command
 npm start
 
 ##### Tips
