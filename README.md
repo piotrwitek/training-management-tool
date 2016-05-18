@@ -21,7 +21,7 @@
   `typings install`
 
 ### Dev server run command
-npm start
+`npm start`
 
 ##### Tips
 - open browser: localhost:8080/src/
