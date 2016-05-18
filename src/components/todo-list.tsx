@@ -1,5 +1,6 @@
-import * as React from 'react';
 export let __hotReload = true;
+
+import * as React from 'react';
 interface IProps {
   todos: Todo[];
 }

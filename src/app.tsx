@@ -1,8 +1,7 @@
-
+export let __hotReload = true;
 
 // style imports
 import './app.css!';
-
 // lib imports
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -17,7 +16,7 @@ const mock: Todo[] = [
   }, {
     uid: 2,
     title: 'item 2',
-    completed: true
+    completed: false
   }, {
     uid: 3,
     title: 'item 3',
