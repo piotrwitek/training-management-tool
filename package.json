@@ -1,8 +1,18 @@
 {
   "name": "training-app",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/jspm-server"
+  },
+  "author": "Piotr Witek",
+  "license": "MIT",
+  "devDependencies": {
+    "jspm": "^0.17.0-beta.14",
+    "jspm-server": "^1.0.1",
+    "typings": "^0.8.1"
+  },
   "jspm": {
     "name": "training-app",
     "main": "training-app.js",
@@ -61,14 +71,5 @@
         }
       }
     }
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "jspm-server": "^1.0.1",
-    "typings": "^0.8.1"
   }
 }
