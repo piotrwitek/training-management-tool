@@ -6,3 +6,6 @@ add jspm@beta dev dep
 enable hot reaload
 0.1.0
 add mobx dep - reactive programming
+0.1.1
+refactored todos example to training
+added store

@@ -30,7 +30,8 @@
     "../typings/main.d.ts",
     "app-typings.d.ts",
     "app.tsx",
-    "components/todo-list.tsx"
+    "components/training-list.tsx",
+    "components/training-store.tsx"
   ],
   "atom": {
     "rewriteTsconfig": true,

@@ -6,27 +6,29 @@ import './app.css!';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // components imports
-import {TodoList} from './components/todo-list';
+import {TrainingList} from './components/training-list';
+import {TrainingStore} from './components/training-store';
 
-const mock: Todo[] = [
-  {
-    uid: 1,
-    title: 'item 1',
-    completed: true
-  }, {
-    uid: 2,
-    title: 'item 2',
-    completed: false
-  }, {
-    uid: 3,
-    title: 'item 3',
-    completed: false
-  }, {
-    uid: 4,
-    title: 'item 4',
-    completed: false
+interface IState {
+  trainingStore: TrainingStore;
+}
+
+export class App extends React.Component<{}, {}> {
+  state: IState = {
+    trainingStore: new TrainingStore()
   }
-];
+
+  handleRemove = (uid) => {
+    this.state.trainingStore.removeItem(uid);
+    this.forceUpdate();
+  }
+
+  render() {
+    return (
+      <TrainingList store={this.state.trainingStore} onRemove={this.handleRemove} />
+    )
+  }
+}
 
 
-export var app: any = ReactDOM.render(<TodoList todos={mock} />, document.getElementById('app-container'));
+export let app: any = ReactDOM.render(<App />, document.getElementById('app-container'));
