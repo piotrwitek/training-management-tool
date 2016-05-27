@@ -16,7 +16,7 @@
 ### Install commands
   `npm install`
   
-  `jspm install` - jspm@0.17.X
+  `jspm install`
   
   `typings install`
 
@@ -26,3 +26,4 @@
 ##### Tips
 - open browser: localhost:8080/src/
 - index page: src/index.html
+- use JSPM beta -> jspm@0.17.X
