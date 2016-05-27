@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/jspm-server"
+    "start": "./node_modules/.bin/jspm-server --only-exts=\".js, .tsx, .html, .css\""
   },
   "author": "Piotr Witek",
   "license": "MIT",
@@ -21,6 +21,7 @@
     },
     "dependencies": {
       "css": "github:systemjs/plugin-css@^0.1.21",
+      "mobx": "npm:mobx@^2.1.7",
       "react": "npm:react@^15.0.2",
       "react-dom": "npm:react-dom@^15.0.2"
     },
