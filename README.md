@@ -27,4 +27,6 @@
 - add training list store with CRUD functionality
 - css styling
 - add local storage as storage layer
+- add node-uuid as uid generator
+
 …
