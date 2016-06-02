@@ -14,6 +14,7 @@
 - open browser: localhost:8080/src/
 - index page: src/index.html
 - use JSPM beta -> jspm@0.17.X
+- follow BEM conventions: https://en.bem.info/methodology/naming-convention/
 
 ### Completed
 - stworzenie struktury nowego projektu i konfiguracja od zera
