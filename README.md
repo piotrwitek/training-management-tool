@@ -17,8 +17,8 @@
 - follow BEM conventions: https://en.bem.info/methodology/naming-convention/
 
 ### Completed
-- stworzenie struktury nowego projektu i konfiguracja od zera
-- stworzenie pierwszego komponentu „TodoList” oraz odpalenie go jako komponent react w przegladarce
+- create project template from scratch
+- create first working component and launch it in the browser
 - add module hot reload to the project
 - add Component Store to example TodoList to persist component state
 - create view to display trainings data
