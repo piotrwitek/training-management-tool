@@ -1,8 +1,9 @@
 # JavaScript Workshops Project
 
 ## Core Contributors:
-- Piotr (@piotrwitek)
-- Seba (@PanRada)
+- Piotr [@piotrwitek](https://github.com/piotrwitek)
+- Seba [@PanRada](https://github.com/PanRada)
+
 
 ### Install commands
   `npm install`
