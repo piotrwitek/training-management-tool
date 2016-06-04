@@ -1,5 +1,9 @@
 # JavaScript Workshops Project
 
+## Core Contributors:
+- [@piotrwitek](https://github.com/piotrwitek)
+- [@PanRada](https://github.com/PanRada)
+
 ### Install commands
   `npm install`
 
@@ -13,7 +17,7 @@
 ##### Tips
 - open browser: localhost:8080/src/
 - index page: src/index.html
-- use JSPM beta -> jspm@0.17.X
+- use JSPM beta -> `jspm@0.17.X`
 - follow BEM conventions: https://en.bem.info/methodology/naming-convention/
 
 ### Completed
