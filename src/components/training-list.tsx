@@ -12,11 +12,11 @@ export class TrainingList extends React.Component<IProps, {}> {
   render() {
     let trainings = this.props.store.state;
     return (
-      <div>
-        <ul>
+      <div className="training-list">
+        <div className="training-list__container">
           { trainings.map((trainingModel) =>
             <TrainingItem key={trainingModel.uid} data={trainingModel} onRemove={this.props.onRemove} />) }
-        </ul>
+        </div>
       </div>
     );
 
@@ -31,7 +31,18 @@ const TrainingItem = (props: TrainingItemProps) => {
   let handleRemove = () => {
     props.onRemove(training.uid);
   }
-  return <li key={training.uid} className={''}>
-    {training.title} - <a onClick={handleRemove} href="javascript:undefined">(Remove)</a
-    ></li>
+  return <div key={training.uid}  className="training-item">
+    <div className="training-item__title">{training.title}</div>
+    <hr/>
+    <div className="training-item__body">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor eveniet expedita labore laboriosam, molestias mollitia,
+    </div>
+    <hr/>
+    <div className="training-item__footer">
+      <ul>
+        <li><a onClick={handleRemove} href="javascript:undefined" >Remove</a></li>
+        <li><a onClick="" href="javascript:undefined" >Edit</a></li>
+      </ul>
+    </div>
+    </div>
 }
