@@ -1,6 +1,8 @@
-# JavaScript Workshops Project
+## Training Management Tool
+##### JavaScript Dev-Workshop Project
+##### Demo: http://piotrwitek.github.io/training-management-tool/
 
-## Core Contributors:
+### Core Contributors:
 - Piotr [@piotrwitek](https://github.com/piotrwitek)
 - Seba [@PanRada](https://github.com/PanRada)
 
