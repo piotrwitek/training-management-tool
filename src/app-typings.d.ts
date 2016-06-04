@@ -1,3 +1,5 @@
+/// <reference path="../typings/index.d.ts" />
+
 type Todo = {
   uid: number;
   title: string;
