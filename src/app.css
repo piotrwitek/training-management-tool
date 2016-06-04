@@ -18,7 +18,7 @@ body {
   font-size: .85em;
 }
 
-.training-list__item {
+.training-item {
   display: inline-block;
   background: #fff;
   padding: 1em;
@@ -30,10 +30,10 @@ body {
   box-shadow: 2px 2px 4px 0 #ccc;
 }
 
-.training-list__item-title {
+.training-item__title {
   font-size: 2em;
 }
-.training-list__item-title i {
+.training-item__title i {
   float: right;
   line-height: .5em;
   color: #ddd;
@@ -43,11 +43,11 @@ hr {
   clear: both;
 }
 
-.training-list__item-body {
+.training-item__body {
   font-size: 1.3em;
 }
 
-.training-list__item-footer ul {
+.training-item__footer ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -55,17 +55,17 @@ hr {
   font-weight: 900;
   text-align: center;
 }
-.training-list__item-footer ul li {
+.training-item__footer ul li {
   display: inline;
   padding: 1em 0.5em;
 }
-.training-list__item-footer ul li a {
+.training-item__footer ul li a {
   color: #ddd;
   text-decoration: none;
   padding: .5em .5em;
   border: 1px solid #ddd;
 }
-.training-list__item-footer ul li a:hover {
+.training-item__footer ul li a:hover {
   color: green;
 }
 
@@ -76,10 +76,10 @@ hr {
     column-count: 2;
   }
 
-  .training-list__item-footer ul li {
+  .training-item__footer ul li {
     padding: .2em .2em;
   }
-  .training-list__item-footer ul li a {
+  .training-item__footer ul li a {
     padding: .3em .2em;
   }
 }
@@ -90,10 +90,10 @@ hr {
     column-count: 1;
   }
 
-  .training-list__item-footer ul li {
+  .training-item__footer ul li {
     padding: .5em .5em;
   }
-  .training-list__item-footer ul li a {
+  .training-item__footer ul li a {
     padding: .3em .2em;
   }
 }
@@ -104,10 +104,10 @@ hr {
     column-count: 2;
   }
 
-  .training-list__item-footer ul li {
+  .training-item__footer ul li {
     padding: .5em .5em;
   }
-  .ttraining-list__item-footer ul li a {
+  .ttraining-item__footer ul li a {
     padding: .3em .2em;
   }
 }

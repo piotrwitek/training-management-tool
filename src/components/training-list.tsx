@@ -31,14 +31,14 @@ const TrainingItem = (props: TrainingItemProps) => {
   let handleRemove = () => {
     props.onRemove(training.uid);
   }
-  return <div key={training.uid}  className="training-list__item">
-    <div className="training-list__item-title">{training.title}</div>
+  return <div key={training.uid}  className="training-item">
+    <div className="training-item__title">{training.title}</div>
     <hr/>
-    <div className="training-list__item-body">
+    <div className="training-item__body">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor eveniet expedita labore laboriosam, molestias mollitia,
     </div>
     <hr/>
-    <div className="training-list__item-footer">
+    <div className="training-item__footer">
       <ul>
         <li><a onClick={handleRemove} href="javascript:undefined" >Remove</a></li>
         <li><a onClick="" href="javascript:undefined" >Edit</a></li>
