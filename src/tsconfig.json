@@ -28,6 +28,7 @@
   "files": [
     "app-typings.d.ts",
     "app.tsx",
+    "components/training-header.tsx",
     "components/training-item.tsx",
     "components/training-list.tsx",
     "components/training-store.tsx"

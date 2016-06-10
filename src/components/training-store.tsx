@@ -7,8 +7,9 @@ export class TrainingStore {
     console.log(this.state);
   }
 
-  addItem = () => {
-
+  addItem = (title: string, description: string) => {
+    let newItem = new TrainingModel(title, description);
+    this.state.push(newItem);
   }
 
   editTitle = () => {
@@ -21,6 +22,7 @@ export class TrainingStore {
 }
 
 let counter = 0;
+
 export class TrainingModel {
   uid: number = counter++;
   title: string;

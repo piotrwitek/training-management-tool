@@ -6,6 +6,7 @@ import {TrainingStore, TrainingModel} from './training-store';
 interface IProps {
   data: TrainingModel;
   onRemove: any;
+  isEditMode?: boolean; // TODO
 }
 
 export const TrainingItem = (props: IProps) => {
@@ -14,10 +15,12 @@ export const TrainingItem = (props: IProps) => {
     props.onRemove(trainingData.uid);
   }
   return <div key={trainingData.uid}  className="training-item">
-    <div className="training-item__title">{trainingData.title}</div>
+    <div className="training-item__title">
+      {trainingData.title}
+    </div>
     <hr/>
     <div className="training-item__body">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolor eveniet expedita labore laboriosam, molestias mollitia,
+      {trainingData.description}
     </div>
     <hr/>
     <div className="training-item__footer">
