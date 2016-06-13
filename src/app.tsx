@@ -6,9 +6,9 @@ import './app.css!';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // components imports
-import {TrainingList} from './components/training-list';
 import {TrainingStore} from './components/training-store';
 import {TrainingHeader} from './components/training-header';
+import {TrainingList} from './components/training-list';
 
 interface IState {
   trainingStore: TrainingStore;
@@ -24,7 +24,7 @@ export class App extends React.Component<{}, {}> {
     this.forceUpdate();
   }
 
-  handleRemove = (uid) => {
+  handleRemove = (uid: number) => {
     this.state.trainingStore.removeItem(uid);
     this.forceUpdate();
   }
@@ -38,6 +38,5 @@ export class App extends React.Component<{}, {}> {
     )
   }
 }
-
 
 export let app: any = ReactDOM.render(<App />, document.getElementById('app-container'));

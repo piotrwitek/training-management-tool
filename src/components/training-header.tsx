@@ -21,7 +21,6 @@ export class TrainingHeader extends React.Component<IProps, IState> {
   handleAdd = () => {
     this.props.onAdd(this.state.title, this.state.description);
     this.setState({ title: '', description: '' });
-    console.log('added new item');
   }
 
   handleChangeTitle = (event) => {

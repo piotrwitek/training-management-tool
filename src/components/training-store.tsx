@@ -4,7 +4,6 @@ export class TrainingStore {
   removeItem = (uid: number) => {
     let newState = this.state.filter((item) => item.uid !== uid);
     this.state = newState;
-    console.log(this.state);
   }
 
   addItem = (title: string, description: string) => {
