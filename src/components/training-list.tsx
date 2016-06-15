@@ -16,7 +16,7 @@ export class TrainingList extends React.Component<IProps, {}> {
       <div className="training-list">
         <div className="training-list__container">
           { trainings.map((trainingModel) =>
-            <TrainingItem key={trainingModel.uid} data={trainingModel} onRemove={this.props.onRemove} />) }
+            <TrainingItem key={trainingModel.uid} data={trainingModel} onRemove={this.props.onRemove} onUpdate={this.props.store.updateItem}/>) }
         </div>
       </div>
     );

@@ -11,6 +11,13 @@ export class TrainingStore {
     this.state.push(newItem);
   }
 
+  updateItem = (uid: number, title: string, description: string) => {
+      let updateItem = this.state.find(item => item.uid === uid);
+
+      updateItem.title = title;
+      updateItem.description = description;
+  }
+
   editTitle = () => {
 
   }

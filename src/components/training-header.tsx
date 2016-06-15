@@ -39,7 +39,7 @@ export class TrainingHeader extends React.Component<IProps, IState> {
         <input id="title" type="text" value={this.state.title} onChange={this.handleChangeTitle} />
         <label htmlFor="description">Description</label>
         <input id="description" type="text" value={this.state.description} onChange={this.handleChangeDescription} />
-        <button type="button" className={'app__button' + (buttonDisabled ? ' app__button__disabled' : '')}
+        <button type="button" className={'app__btn' + (buttonDisabled ? ' app__btn--disabled' : '')}
          onClick={this.handleAdd} disabled={buttonDisabled}>Add New</button>
       </div>
     );

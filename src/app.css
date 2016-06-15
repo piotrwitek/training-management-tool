@@ -26,41 +26,61 @@ body {
     -webkit-box-sizing: border-box;
     box-shadow: 2px 2px 4px 0 #ccc;
 }
+
 .training-item__title {
     font-size: 2em;
 }
+
 .training-item__title i {
     float: right;
     line-height: .5em;
     color: #ddd;
 }
+
 hr {
     clear: both;
 }
+
 .training-item__body {
     font-size: 1.3em;
 }
+
+.description__text {
+    font: inherit;
+    font-size: 1.3em;
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.description__text--readonly {
+    border: none;
+}
+
+.title__text {
+    font-size: 2em;
+    width: 100%;
+}
+
+.title__text--readonly {
+    border: none;
+    width: 100%;
+}
+
 .training-item__footer ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 1.5em;
-    font-weight: 900;
+    font-size: 1.0em;
     text-align: center;
 }
 .training-item__footer ul li {
     display: inline;
     padding: 1em 0.5em;
 }
-.training-item__footer ul li a {
-    color: #ddd;
-    text-decoration: none;
-    padding: .5em .5em;
-    border: 1px solid #ddd;
-}
-.training-item__footer ul li a:hover {
-    color: green;
-}
+
 @media only screen and (min-width: 400px) {
     .training-list__container {
         -moz-column-count: 2;
@@ -112,16 +132,25 @@ hr {
         width: 1260px;
     }
 }
-.app__button {
+.app__btn {
     display: inline;
     color: black;
-    font-size: 1.5em;
+    font-size: 1.0em;
     padding: .5em .5em;
-    margin: 0 .1em;
     border: 1px solid #ddd;
     text-align: center;
+    cursor: pointer;
 }
 
-.app__button__disabled {
-  color: grey;
+.app__btn--disabled {
+    cursor: not-allowed;
+    color: grey;
+}
+
+.btn--hover-green:hover {
+    color: green;
+}
+
+.btn--hover-red:hover {
+    color: red;
 }
