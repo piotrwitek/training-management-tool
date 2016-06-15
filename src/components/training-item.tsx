@@ -6,90 +6,71 @@ import {TrainingStore, TrainingModel} from './training-store';
 interface IProps {
   data: TrainingModel;
   onRemove: any;
-  onUpdate: any;
+  onEdit: any;
 }
 
 interface IState {
-    uid: number;
-    title?: string;
-    description?: string;
-    isEditMode?: boolean;
+  isEditMode?: boolean;
 }
 
 export class TrainingItem extends React.Component<IProps, {}> {
-    state: IState = {
-      uid: 0,
-      title: '',
-      description: '',
-      isEditMode: false
-    }
+  state: IState = {
+    isEditMode: false
+  }
 
-    descTextArea: HTMLTextAreaElement;
-    titleInput: HTMLInputElement;
+  descTextArea: HTMLTextAreaElement;
+  refDescTextArea = (ref) => this.descTextArea = ref;
+  titleInput: HTMLInputElement;
+  refTitleInput = (ref) => this.titleInput = ref;
 
-    componentWillMount() {
-        this.setState(this.props.data);
-    }
+  handleRemove = (): void => {
+    this.props.onRemove(this.props.data.uid);
+  }
 
-    componentDidMount() {
-        this.resizeTextArea();
-    }
+  handleEdit = (): void => {
+    this.setState({ isEditMode: !this.state.isEditMode });
+  }
 
-    componentDidUpdate() {
-        this.resizeTextArea();
-    }
+  handleSave = (): void => {
+    this.props.onEdit(this.props.data.uid, this.titleInput.value, this.descTextArea.value);
+    this.setState({ isEditMode: false });
+  }
 
-    resizeTextArea= ():void => {
-        this.descTextArea.style.height = this.descTextArea.scrollHeight + 'px';
-    }
+  handleCancel = (): void => {
+    this.titleInput.value = this.props.data.title;
+    this.descTextArea.value = this.props.data.description;
+    this.setState({ isEditMode: false });
+  }
 
-    handleEdit = ():void => {
-        this.setState({isEditMode: !this.state.isEditMode});
-    }
-
-    handleSave = ():void => {
-        this.setState({isEditMode: false, title:this.titleInput.value, description: this.descTextArea.value});
-        this.props.onUpdate(this.state.uid, this.titleInput.value, this.descTextArea.value);
-    }
-
-    handleRemove = ():void => {
-        this.props.onRemove(this.state.uid);
-    }
-
-    handleCancel = ():void => {
-        this.descTextArea.value = this.state.description;
-        this.setState({isEditMode: false});
-    }
-
-    render() {
-      return <div key={this.state.uid}  className="training-item">
-        <input ref={(ref) => this.titleInput = ref}
-            type='text'
-            className={this.state.isEditMode ? "title__text": "title__text title__text--readonly"}
-            defaultValue={this.state.title}
-            readOnly={!this.state.isEditMode}
+  render() {
+    return <div key={this.props.data.uid}  className="training-item">
+      <input ref={this.refTitleInput}
+        type='text'
+        className={this.state.isEditMode ? "title__text" : "title__text title__text--readonly"}
+        defaultValue={this.props.data.title}
+        readOnly={!this.state.isEditMode}
         />
-        <hr/>
-        <textarea ref={(ref) => this.descTextArea = ref}
-            className={this.state.isEditMode ? "description__text" : "description__text description__text--readonly"}
-            readOnly={!this.state.isEditMode}
-            defaultValue={this.state.description}
+      <hr/>
+      <textarea ref={this.refDescTextArea}
+        className={this.state.isEditMode ? "description__text" : "description__text description__text--readonly"}
+        defaultValue={this.props.data.description}
+        readOnly={!this.state.isEditMode}
         />
-        <hr/>
-        <div className="training-item__footer">
-          <ul>
-            <li>
-                <button className='app__btn btn--hover-green' type='button' onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}>
-                    {this.state.isEditMode ? 'Save' : 'Edit'}
-                </button>
-            </li>
-            <li>
-                <button className='app__btn btn--hover-red' type='button' onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}>
-                    {this.state.isEditMode ? 'Cancel' : 'Remove'}
-                </button>
-            </li>
-          </ul>
-        </div>
+      <hr/>
+      <div className="training-item__footer">
+        <ul>
+          <li>
+            <button className='app__btn btn--hover-green' type='button' onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}>
+              {this.state.isEditMode ? 'Save' : 'Edit'}
+            </button>
+          </li>
+          <li>
+            <button className='app__btn btn--hover-red' type='button' onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}>
+              {this.state.isEditMode ? 'Cancel' : 'Remove'}
+            </button>
+          </li>
+        </ul>
       </div>
-    }
+    </div>
+  }
 };

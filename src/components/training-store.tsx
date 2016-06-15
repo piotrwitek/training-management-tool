@@ -3,28 +3,24 @@ export class TrainingStore {
 
   removeItem = (uid: number) => {
     let newState = this.state.filter((item) => item.uid !== uid);
+
     this.state = newState;
   }
 
   addItem = (title: string, description: string) => {
     let newItem = new TrainingModel(title, description);
+
     this.state.push(newItem);
   }
 
-  updateItem = (uid: number, title: string, description: string) => {
-      let updateItem = this.state.find(item => item.uid === uid);
+  editItem = (uid: number, title: string, description: string) => {
+    let existingItem = this.state.find(item => item.uid === uid);
+    if (existingItem == null) return;
 
-      updateItem.title = title;
-      updateItem.description = description;
+    existingItem.title = title;
+    existingItem.description = description;
   }
 
-  editTitle = () => {
-
-  }
-
-  editDescription = () => {
-
-  }
 }
 
 let counter = 0;

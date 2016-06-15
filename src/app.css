@@ -148,9 +148,9 @@ hr {
 }
 
 .btn--hover-green:hover {
-    color: green;
+    background-color: green;
 }
 
 .btn--hover-red:hover {
-    color: red;
+    background-color: red;
 }

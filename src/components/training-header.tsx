@@ -35,12 +35,18 @@ export class TrainingHeader extends React.Component<IProps, IState> {
     let buttonDisabled = this.state.title === '' || this.state.description === '';
     return (
       <div className="training-list">
-        <label htmlFor="title">Title</label>
-        <input id="title" type="text" value={this.state.title} onChange={this.handleChangeTitle} />
-        <label htmlFor="description">Description</label>
-        <input id="description" type="text" value={this.state.description} onChange={this.handleChangeDescription} />
-        <button type="button" className={'app__btn' + (buttonDisabled ? ' app__btn--disabled' : '')}
-         onClick={this.handleAdd} disabled={buttonDisabled}>Add New</button>
+        <p className="control">
+          <label htmlFor="title" className="label">Title</label>
+          <input id="title" className="input" type="text" value={this.state.title} onChange={this.handleChangeTitle} />
+        </p>
+        <p className="control">
+          <label htmlFor="description" className="label">Description</label>
+          <textarea id="description" className="textarea" type="text" value={this.state.description} onChange={this.handleChangeDescription}></textarea>
+        </p>
+        <p className="control is-clearfix">
+          <button type="button" className={'button is-primary is-pulled-right' + (buttonDisabled ? ' is-disabled' : '') }
+            onClick={this.handleAdd} disabled={buttonDisabled}>Add New</button>
+        </p>
       </div>
     );
   }
