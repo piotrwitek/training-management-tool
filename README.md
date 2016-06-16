@@ -25,16 +25,13 @@
 - follow BEM conventions: https://en.bem.info/methodology/naming-convention/
 
 ### Completed
-- create project template from scratch
-- create first working component and launch it in the browser
-- add module hot reload to the project
-- add Component Store to example TodoList to persist component state
-- create view to display trainings data
-- create training list component to display available trainings
+- first working component and launch it in the browser
+- module hot reload to the project
+- training list component to display available trainings
+- training list store with CRUD functionality
 
 ### Todo
-- add training list store with CRUD functionality
-- add PouchDB as persistence layer
-- add node-uuid as uid generator
+- PouchDB as persistence layer for stores
+- node-uuid as uid generator
 
 …
