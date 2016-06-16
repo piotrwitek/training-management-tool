@@ -50,9 +50,7 @@ hr {
     font-size: 1.3em;
     width: 100%;
     resize: none;
-    overflow: hidden;
-    margin: 0px;
-    padding: 0px;
+	box-shadow: none;
 }
 
 .description__text--readonly {
@@ -62,6 +60,8 @@ hr {
 .title__text {
     font-size: 2em;
     width: 100%;
+    margin-top: 10px;
+	box-shadow: none;
 }
 
 .title__text--readonly {
