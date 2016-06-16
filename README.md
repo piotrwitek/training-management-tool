@@ -2,9 +2,10 @@
 ##### JavaScript Dev-Workshop Project
 ##### Demo: http://piotrwitek.github.io/training-management-tool/
 
-### Core Contributors:
+### Contributors:
 - Piotr [@piotrwitek](https://github.com/piotrwitek)
 - Seba [@PanRada](https://github.com/PanRada)
+- Bartosz [@migacz1125](https://github.com/migacz1125)
 
 
 ### Install commands
@@ -33,8 +34,7 @@
 
 ### Todo
 - add training list store with CRUD functionality
-- css styling
-- add local storage as storage layer
+- add PouchDB as persistence layer
 - add node-uuid as uid generator
 
 …
