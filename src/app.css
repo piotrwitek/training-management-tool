@@ -50,8 +50,6 @@ hr {
     font-size: 1.3em;
     width: 100%;
     resize: none;
-    -webkit-box-shadow: none;
-	-moz-box-shadow: none;
 	box-shadow: none;
 }
 
@@ -63,8 +61,6 @@ hr {
     font-size: 2em;
     width: 100%;
     margin-top: 10px;
-    -webkit-box-shadow: none;
-	-moz-box-shadow: none;
 	box-shadow: none;
 }
 
