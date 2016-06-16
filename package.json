@@ -2,15 +2,30 @@
   "name": "training-management-tool",
   "version": "0.2.0",
   "description": "training-management-tool",
-  "main": "",
-  "scripts": {
-    "start": "./node_modules/.bin/jspm-server --only-exts=\".js, .tsx, .html, .css\""
+  "main": "server.js",
+  "repository": {
+    "url": "https://github.com/piotrwitek/training-management-tool"
   },
-  "author": "Piotr Witek",
+  "scripts": {
+    "start": "start npm run server",
+    "server": "node server.js",
+    "postinstall": "npm run install-jspm && npm run install-typings",
+    "install-jspm": "./node_modules/.bin/jspm install",
+    "install-typings": "./node_modules/.bin/typings install",
+    "bundle": "./node_modules/.bin/jspm bundle src/app out/app.transpiled.js && npm run regenerator && npm run copy",
+    "regenerator": "cd out && regenerator -r app.transpiled.js > app.regenerator.js",
+    "copy": "cp out/app.regenerator.js dist/SiteAssets/timeline/app.js",
+    "uglify": "cd dist && uglifyjs app.js -o app.min.js --screw-ie8 && cd ..",
+    "docs": "typedoc --options typedoc.json src/app.tsx"
+  },
+  "author": "Piotr Witek <piotrek.witek@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "chokidar-socket-emitter": "^0.5.2",
+    "http-server": "^0.9.0",
     "jspm": "^0.17.0-beta.21",
     "jspm-server": "^1.0.1",
+    "typedoc": "^0.4.3",
     "typings": "^1.0.4"
   },
   "jspm": {
@@ -27,7 +42,8 @@
     },
     "devDependencies": {
       "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^4.0.16"
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^4.0.16",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
       "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
@@ -61,10 +77,28 @@
           "_stream_transform": "readable-stream/transform"
         }
       },
+      "npm:debug@2.2.0": {
+        "main": "browser.js",
+        "jspmNodeConversion": false,
+        "format": "cjs",
+        "map": {
+          "./browser.js": {
+            "node": "./node.js"
+          },
+          "fs": "@node/fs",
+          "net": "@node/net",
+          "tty": "@node/tty",
+          "util": "@node/util"
+        }
+      },
       "npm:inherits@2.0.1": {
         "ignore": [
           "test.js"
         ]
+      },
+      "npm:ms@0.7.1": {
+        "jspmNodeConversion": false,
+        "format": "cjs"
       },
       "npm:typescript@1.8.10": {
         "browser": {},

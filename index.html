@@ -16,8 +16,12 @@
   <script src="/jspm_packages/system.js"></script>
   <script src="/jspm.config.js"></script>
   <script type="text/javascript">
-    System.production = false;
-    System.trace = true;
+    if (location.origin.match(/localhost/)) {
+      System.trace = true;
+      System.import('systemjs-hot-reloader').then(function(HotReloader) {
+        new HotReloader.default('http://localhost:8888');  // chokidar-socket-emitter port
+      });
+    }
     System.import('src/app');
   </script>
 </body>

@@ -1,4 +1,4 @@
-export let __hotReload = true;
+export function __reload(m) { if (m.app.state) app.setState(m.app.state); }
 
 // style imports
 import './app.css!';

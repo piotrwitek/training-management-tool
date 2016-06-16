@@ -1,5 +1,3 @@
-export let __hotReload = true;
-
 import * as React from 'react';
 import {TrainingStore, TrainingModel} from './training-store';
 import {TrainingItem} from './training-item';

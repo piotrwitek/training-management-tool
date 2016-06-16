@@ -23,10 +23,11 @@
 - index page: src/index.html
 - use JSPM beta -> `jspm@0.17.X`
 - follow BEM conventions: https://en.bem.info/methodology/naming-convention/
+- `npm install -g regenerator` - for bundling
 
 ### Completed
 - first working component and launch it in the browser
-- module hot reload to the project
+- systemjs hot module reload
 - training list component to display available trainings
 - training list store with CRUD functionality
 
