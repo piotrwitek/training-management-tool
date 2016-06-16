@@ -46,13 +46,13 @@ export class TrainingItem extends React.Component<IProps, {}> {
     return <div key={this.props.data.uid}  className="training-item">
       <input ref={this.refTitleInput}
         type='text'
-        className={this.state.isEditMode ? "title__text" : "title__text title__text--readonly"}
+        className={this.state.isEditMode ? "input title__text" : "input title__text title__text--readonly"}
         defaultValue={this.props.data.title}
         readOnly={!this.state.isEditMode}
         />
       <hr/>
       <textarea ref={this.refDescTextArea}
-        className={this.state.isEditMode ? "description__text" : "description__text description__text--readonly"}
+        className={this.state.isEditMode ? "textarea description__text" : "textarea description__text description__text--readonly"}
         defaultValue={this.props.data.description}
         readOnly={!this.state.isEditMode}
         />
@@ -60,12 +60,12 @@ export class TrainingItem extends React.Component<IProps, {}> {
       <div className="training-item__footer">
         <ul>
           <li>
-            <button className='app__btn btn--hover-green' type='button' onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}>
+            <button className='button is-success' type='button' onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}>
               {this.state.isEditMode ? 'Save' : 'Edit'}
             </button>
           </li>
           <li>
-            <button className='app__btn btn--hover-red' type='button' onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}>
+            <button className='button is-danger' type='button' onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}>
               {this.state.isEditMode ? 'Cancel' : 'Remove'}
             </button>
           </li>
