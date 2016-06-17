@@ -32,6 +32,7 @@ typings
 dist/app.js
 src_server/uploads/*
 out/
+dist/
 docs/
 
 # Webstorm IDE
