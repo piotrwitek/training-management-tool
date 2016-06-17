@@ -31,7 +31,8 @@ jspm_packages
 typings
 dist/app.js
 src_server/uploads/*
-out
+out/
+docs/
 
 # Webstorm IDE
 .idea

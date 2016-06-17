@@ -13,20 +13,21 @@
     "install-jspm": "./node_modules/.bin/jspm install",
     "install-typings": "./node_modules/.bin/typings install",
     "bundle": "./node_modules/.bin/jspm bundle src/app out/app.transpiled.js && npm run regenerator && npm run copy",
+    "bundle-min": "./node_modules/.bin/jspm bundle src/app out/app.transpiled.js --minify && npm run regenerator && npm run copy",
     "regenerator": "cd out && regenerator -r app.transpiled.js > app.regenerator.js",
-    "copy": "cp out/app.regenerator.js dist/SiteAssets/timeline/app.js",
+    "copy": "cp out/app.regenerator.js dist/app.js",
     "uglify": "cd dist && uglifyjs app.js -o app.min.js --screw-ie8 && cd ..",
-    "docs": "typedoc --options typedoc.json src/app.tsx"
+    "docs": "./node_modules/.bin/typedoc src/ --out docs/ --module system --jsx react --target es6"
   },
   "author": "Piotr Witek <piotrek.witek@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "chokidar-socket-emitter": "^0.5.2",
     "http-server": "^0.9.0",
-    "jspm": "^0.17.0-beta.21",
+    "jspm": "^0.17.0-beta.22",
     "jspm-server": "^1.0.1",
     "typedoc": "^0.4.3",
-    "typings": "^1.0.4"
+    "typings": "^1.3.0"
   },
   "jspm": {
     "name": "training-management-tool",

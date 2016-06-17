@@ -16,10 +16,10 @@ export class TrainingItem extends React.Component<IProps, {}> {
     isEditMode: false
   }
 
-  descTextArea: HTMLTextAreaElement;
-  refDescTextArea = (ref) => this.descTextArea = ref;
-  titleInput: HTMLInputElement;
-  refTitleInput = (ref) => this.titleInput = ref;
+  descriptionRef: HTMLTextAreaElement;
+  initDescriptionRef = (ref) => this.descriptionRef = ref;
+  titleRef: HTMLInputElement;
+  initTitleRef = (ref) => this.titleRef = ref;
 
   handleRemove = (): void => {
     this.props.onRemove(this.props.data.uid);
@@ -30,26 +30,26 @@ export class TrainingItem extends React.Component<IProps, {}> {
   }
 
   handleSave = (): void => {
-    this.props.onEdit(this.props.data.uid, this.titleInput.value, this.descTextArea.value);
+    this.props.onEdit(this.props.data.uid, this.titleRef.value, this.descriptionRef.value);
     this.setState({ isEditMode: false });
   }
 
   handleCancel = (): void => {
-    this.titleInput.value = this.props.data.title;
-    this.descTextArea.value = this.props.data.description;
+    this.titleRef.value = this.props.data.title;
+    this.descriptionRef.value = this.props.data.description;
     this.setState({ isEditMode: false });
   }
 
   render() {
     return <div key={this.props.data.uid}  className="training-item">
-      <input ref={this.refTitleInput}
+      <input ref={this.initTitleRef}
         type='text'
         className={this.state.isEditMode ? "input title__text" : "input title__text title__text--readonly"}
         defaultValue={this.props.data.title}
         readOnly={!this.state.isEditMode}
         />
       <hr/>
-      <textarea ref={this.refDescTextArea}
+      <textarea ref={this.initDescriptionRef}
         className={this.state.isEditMode ? "textarea description__text" : "textarea description__text description__text--readonly"}
         defaultValue={this.props.data.description}
         readOnly={!this.state.isEditMode}
