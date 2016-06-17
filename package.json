@@ -1,48 +1,70 @@
 {
-  "name": "training-app",
-  "version": "0.1.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "./node_modules/.bin/jspm-server --only-exts=\".js, .tsx, .html, .css\""
+  "name": "training-management-tool",
+  "version": "0.2.0",
+  "description": "training-management-tool",
+  "main": "server.js",
+  "repository": {
+    "url": "https://github.com/piotrwitek/training-management-tool"
   },
-  "author": "Piotr Witek",
+  "scripts": {
+    "start": "start npm run server",
+    "server": "node server.js",
+    "postinstall": "npm run install-jspm && npm run install-typings",
+    "install-jspm": "./node_modules/.bin/jspm install",
+    "install-typings": "./node_modules/.bin/typings install",
+    "bundle": "./node_modules/.bin/jspm bundle src/app out/app.transpiled.js && npm run regenerator && npm run copy",
+    "regenerator": "cd out && regenerator -r app.transpiled.js > app.regenerator.js",
+    "copy": "cp out/app.regenerator.js dist/SiteAssets/timeline/app.js",
+    "uglify": "cd dist && uglifyjs app.js -o app.min.js --screw-ie8 && cd ..",
+    "docs": "typedoc --options typedoc.json src/app.tsx"
+  },
+  "author": "Piotr Witek <piotrek.witek@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "jspm": "^0.17.0-beta.16",
+    "chokidar-socket-emitter": "^0.5.2",
+    "http-server": "^0.9.0",
+    "jspm": "^0.17.0-beta.21",
     "jspm-server": "^1.0.1",
-    "typings": "^0.8.1"
+    "typedoc": "^0.4.3",
+    "typings": "^1.0.4"
   },
   "jspm": {
-    "name": "training-app",
-    "main": "training-app.js",
+    "name": "training-management-tool",
+    "main": "app.tsx",
     "directories": {
       "lib": "src"
     },
     "dependencies": {
+      "bulma": "npm:bulma@^0.0.28",
       "css": "github:systemjs/plugin-css@^0.1.21",
-      "mobx": "npm:mobx@^2.1.7",
-      "react": "npm:react@^15.0.2",
-      "react-dom": "npm:react-dom@^15.0.2"
+      "mobx-react": "npm:mobx-react@^3.3.1",
+      "react-dom": "npm:react-dom@^15.1.0"
     },
     "devDependencies": {
       "os": "github:jspm/nodelibs-os@^0.2.0-alpha",
-      "plugin-typescript": "github:frankwallis/plugin-typescript@^4.0.10"
+      "plugin-typescript": "github:frankwallis/plugin-typescript@^4.0.16",
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.6.0"
     },
     "peerDependencies": {
       "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
       "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
+      "child_process": "github:jspm/nodelibs-child_process@^0.2.0-alpha",
+      "constants": "github:jspm/nodelibs-constants@^0.2.0-alpha",
+      "crypto": "github:jspm/nodelibs-crypto@^0.2.0-alpha",
       "domain": "github:jspm/nodelibs-domain@^0.2.0-alpha",
       "events": "github:jspm/nodelibs-events@^0.2.0-alpha",
       "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
       "http": "github:jspm/nodelibs-http@^0.2.0-alpha",
       "https": "github:jspm/nodelibs-https@^0.2.0-alpha",
+      "mobx": "npm:mobx@^2.1.7",
       "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
       "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "react": "npm:react@^15.1.0",
       "stream": "github:jspm/nodelibs-stream@^0.2.0-alpha",
       "string_decoder": "github:jspm/nodelibs-string_decoder@^0.2.0-alpha",
       "url": "github:jspm/nodelibs-url@^0.2.0-alpha",
       "util": "github:jspm/nodelibs-util@^0.2.0-alpha",
+      "vm": "github:jspm/nodelibs-vm@^0.2.0-alpha",
       "zlib": "github:jspm/nodelibs-zlib@^0.2.0-alpha"
     },
     "overrides": {
@@ -55,10 +77,28 @@
           "_stream_transform": "readable-stream/transform"
         }
       },
+      "npm:debug@2.2.0": {
+        "main": "browser.js",
+        "jspmNodeConversion": false,
+        "format": "cjs",
+        "map": {
+          "./browser.js": {
+            "node": "./node.js"
+          },
+          "fs": "@node/fs",
+          "net": "@node/net",
+          "tty": "@node/tty",
+          "util": "@node/util"
+        }
+      },
       "npm:inherits@2.0.1": {
         "ignore": [
           "test.js"
         ]
+      },
+      "npm:ms@0.7.1": {
+        "jspmNodeConversion": false,
+        "format": "cjs"
       },
       "npm:typescript@1.8.10": {
         "browser": {},

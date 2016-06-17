@@ -1,5 +1,3 @@
-export let __hotReload = true;
-
 import * as React from 'react';
 import {TrainingStore, TrainingModel} from './training-store';
 
@@ -43,31 +41,33 @@ export class TrainingItem extends React.Component<IProps, {}> {
   }
 
   render() {
-    return <div key={this.props.data.uid}  className="column is-mobile is-half-tablet is-one-third-desktop">
-    <div className="card">
-    <header className="card-header">
+    return <div key={this.props.data.uid}  className="training-item">
       <input ref={this.refTitleInput}
         type='text'
-        className={this.state.isEditMode ? "input title__text card-header-title" : "input title__text title__text--readonly card-header-title" }
+        className={this.state.isEditMode ? "input title__text" : "input title__text title__text--readonly"}
         defaultValue={this.props.data.title}
         readOnly={!this.state.isEditMode}
         />
-    </header>
-      <div className="card-content">
+      <hr/>
       <textarea ref={this.refDescTextArea}
         className={this.state.isEditMode ? "textarea description__text" : "textarea description__text description__text--readonly"}
         defaultValue={this.props.data.description}
         readOnly={!this.state.isEditMode}
         />
-      </div>
-      <div className="card-footer">
-            <a className='card-footer-item is-success'  onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}>
+      <hr/>
+      <div className="training-item__footer">
+        <ul>
+          <li>
+            <button className='button is-success' type='button' onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}>
               {this.state.isEditMode ? 'Save' : 'Edit'}
-            </a>
-            <a className='card-footer-item is-danger' onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}>
+            </button>
+          </li>
+          <li>
+            <button className='button is-danger' type='button' onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}>
               {this.state.isEditMode ? 'Cancel' : 'Remove'}
-            </a>
-      </div>
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
   }

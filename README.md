@@ -1,4 +1,12 @@
-# JavaScript Workshops Project
+## Training Management Tool
+##### JavaScript Dev-Workshop Project
+##### Demo: http://piotrwitek.github.io/training-management-tool/
+
+### Contributors:
+- Piotr [@piotrwitek](https://github.com/piotrwitek)
+- Seba [@PanRada](https://github.com/PanRada)
+- Bartosz [@migacz1125](https://github.com/migacz1125)
+
 
 ### Install commands
   `npm install`
@@ -13,20 +21,18 @@
 ##### Tips
 - open browser: localhost:8080/src/
 - index page: src/index.html
-- use JSPM beta -> jspm@0.17.X
+- use JSPM beta -> `jspm@0.17.X`
+- follow BEM conventions: https://en.bem.info/methodology/naming-convention/
+- `npm install -g regenerator` - for bundling
 
 ### Completed
-- stworzenie struktury nowego projektu i konfiguracja od zera
-- stworzenie pierwszego komponentu „TodoList” oraz odpalenie go jako komponent react w przegladarce
-- add module hot reload to the project
-- add Component Store to example TodoList to persist component state
-- create view to display trainings data
-- create training list component to display available trainings
+- first working component and launch it in the browser
+- systemjs hot module reload
+- training list component to display available trainings
+- training list store with CRUD functionality
 
 ### Todo
-- add training list store with CRUD functionality
-- css styling
-- add local storage as storage layer
-- add node-uuid as uid generator
+- PouchDB as persistence layer for stores
+- node-uuid as uid generator
 
 …

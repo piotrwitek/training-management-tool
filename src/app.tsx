@@ -1,4 +1,4 @@
-export let __hotReload = true;
+export function __reload(m) { if (m.app.state) app.setState(m.app.state); }
 
 // style imports
 import './app.css!';
@@ -31,9 +31,9 @@ export class App extends React.Component<{}, {}> {
 
   render() {
     return (
-      <div className="container">
-        <TrainingHeader onAdd={this.handleAdd}  className="columns"/>
-        <TrainingList store={this.state.trainingStore} onRemove={this.handleRemove} classNama="columns is-one-third" />
+      <div>
+        <TrainingHeader onAdd={this.handleAdd} />
+        <TrainingList store={this.state.trainingStore} onRemove={this.handleRemove} />
       </div>
     )
   }
