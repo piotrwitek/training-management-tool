@@ -31,6 +31,7 @@
 - `npm run deploy` - commit to deployment repository & push to remote
 
 ### Tips
+- guide to sync fork (don't merge to keep a history clean): http://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository
 - open browser: localhost:8888
 - use JSPM beta -> `jspm@0.17.X`
 - follow BEM conventions: https://en.bem.info/methodology/naming-convention/
