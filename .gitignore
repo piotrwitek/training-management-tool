@@ -29,11 +29,10 @@ src/**/*.map
 node_modules
 jspm_packages
 typings
-dist/app.js
-src_server/uploads/*
 out/
 dist/
 docs/
+dev-bundle.js
 
 # Webstorm IDE
 .idea
