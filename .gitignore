@@ -29,9 +29,9 @@ src/**/*.map
 node_modules
 jspm_packages
 typings
-out/
-dist/
-docs/
+out
+dist
+docs
 dev-bundle.js*
 
 # Webstorm IDE
