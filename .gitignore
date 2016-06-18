@@ -32,7 +32,7 @@ typings
 out/
 dist/
 docs/
-dev-bundle.js
+dev-bundle.js*
 
 # Webstorm IDE
 .idea
