@@ -1,4 +1,6 @@
 import * as React from 'react';
+import {observable, computed} from "mobx";
+import {observer} from "mobx-react";
 import {TrainingStore, TrainingModel} from './training-store';
 
 interface IProps {
@@ -6,43 +8,47 @@ interface IProps {
 }
 
 interface IState {
-  title?: string;
-  description?: string;
-  modalActive?: boolean;
 }
 
+@observer
 export class TrainingHeader extends React.Component<IProps, IState> {
-  state: IState = {
-    title: '',
-    description: '',
-    modalActive: false
-  }
+  @observable title: string = '';
+  @observable description: string = '';
+  @observable modalIsActive: boolean = false;
+  @computed get addButtonIsDisabled() {
+    return this.title === '' || this.description === '';
+  };
 
   handleAdd = () => {
-    this.props.onAdd(this.state.title, this.state.description);
-    this.setState({ title: '', description: '' });
+    this.props.onAdd(this.title, this.description);
     this.toggleModal();
   }
 
   handleChangeTitle = (event) => {
-    this.setState({ title: event.target.value });
+    this.title = event.target.value;
   }
 
   handleChangeDescription = (event) => {
-    this.setState({ description: event.target.value });
+    this.description = event.target.value;
   }
 
   toggleModal = () => {
-    this.setState({ modalActive: !this.state.modalActive, title: '', description: '' });
+    this.modalIsActive = !this.modalIsActive;
+    this.resetForm();
+  }
+
+  resetForm = () => {
+    this.title = this.description = '';
   }
 
   render() {
-    let buttonDisabled = this.state.title === '' || this.state.description === '';
+    let modalIsActiveClass = this.modalIsActive ? ' is-active' : '';
+
     return (
       <div className="hero">
-        <button type="button" className={'button is-primary hero-body'}
+        <button type="button" className="button is-primary"
           onClick={this.toggleModal}>Add New</button>
-        <div className={"modal" + (this.state.modalActive ? " is-active" : "") }>
+        <div className={'modal' + modalIsActiveClass}>
           <div className="modal-background" onClick={this.toggleModal}></div>
           <div className="modal-card">
             <header className="modal-card-head">
@@ -51,16 +57,18 @@ export class TrainingHeader extends React.Component<IProps, IState> {
             <section className="modal-card-body">
               <p className="control">
                 <label htmlFor="title" className="label">Title</label>
-                <input id="title" className="input" type="text" value={this.state.title} onChange={this.handleChangeTitle} />
+                <input id="title" className="input" type="text"
+                  value={this.title} onChange={this.handleChangeTitle} />
               </p>
               <p className="control">
                 <label htmlFor="description" className="label">Description</label>
-                <textarea id="description" className="textarea" type="text" value={this.state.description} onChange={this.handleChangeDescription}></textarea>
+                <textarea id="description" className="textarea"
+                  value={this.description} onChange={this.handleChangeDescription}></textarea>
               </p>
             </section>
             <footer className="modal-card-foot">
-              <button type="button" className={'button is-primary is-pulled-right' + (buttonDisabled ? ' is-disabled' : '') }
-                onClick={this.handleAdd} disabled={buttonDisabled}>Add New</button>
+              <button type="button" className="button is-primary"
+                onClick={this.handleAdd} disabled={this.addButtonIsDisabled}>Add New</button>
               <a className="button" onClick={this.toggleModal}>Cancel</a>
             </footer>
           </div>
