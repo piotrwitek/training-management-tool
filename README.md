@@ -13,7 +13,7 @@
 ### Installation
   
 ##### 1. Clone repo
-    git clone https://github.com/piotrwitek/react-dnd-dropzone.git
+    git clone https://github.com/piotrwitek/training-management-tool.git
 
 ##### 2. Install all dependencies
     npm install
