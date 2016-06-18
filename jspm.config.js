@@ -11,7 +11,8 @@ SystemJS.config({
     "map": {
       "plugin-typescript": "github:frankwallis/plugin-typescript@4.0.16",
       "os": "github:jspm/nodelibs-os@0.2.0-alpha",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0"
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
+      "css": "github:systemjs/plugin-css@0.1.23"
     },
     "packages": {
       "github:frankwallis/plugin-typescript@4.0.16": {
@@ -70,11 +71,9 @@ SystemJS.config({
   map: {
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
-    "bulma": "npm:bulma@0.0.28",
     "child_process": "github:jspm/nodelibs-child_process@0.2.0-alpha",
     "constants": "github:jspm/nodelibs-constants@0.2.0-alpha",
     "crypto": "github:jspm/nodelibs-crypto@0.2.0-alpha",
-    "css": "github:systemjs/plugin-css@0.1.23",
     "domain": "github:jspm/nodelibs-domain@0.2.0-alpha",
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
