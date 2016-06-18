@@ -45,9 +45,12 @@ export class TrainingHeader extends React.Component<IProps, IState> {
     let modalIsActiveClass = this.modalIsActive ? ' is-active' : '';
 
     return (
-      <div className="hero">
-        <button type="button" className="button is-primary"
-          onClick={this.toggleModal}>Add New</button>
+      <div className="">
+        <p className="control">
+          <button type="button" className="button is-primary is-large is-fullwidth"
+            onClick={this.toggleModal}>Add New</button>
+        </p>
+
         <div className={'modal' + modalIsActiveClass}>
           <div className="modal-background" onClick={this.toggleModal}></div>
           <div className="modal-card">
@@ -67,9 +70,9 @@ export class TrainingHeader extends React.Component<IProps, IState> {
               </p>
             </section>
             <footer className="modal-card-foot">
-              <button type="button" className="button is-primary"
+              <button className="button is-primary"
                 onClick={this.handleAdd} disabled={this.addButtonIsDisabled}>Add New</button>
-              <a className="button" onClick={this.toggleModal}>Cancel</a>
+              <button className="button is-link" onClick={this.toggleModal}>Cancel</button>
             </footer>
           </div>
           <button className="modal-close"></button>

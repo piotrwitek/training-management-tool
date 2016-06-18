@@ -41,34 +41,31 @@ export class TrainingItem extends React.Component<IProps, {}> {
   }
 
   render() {
-    return <div className="column is-one-third ">
+    return <div className="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen">
       <div className="card is-fullwidth">
         <header className="card-header">
-          <input ref={this.initTitleRef}
-            type='text'
-            className={this.state.isEditMode ? "card-header-title " : "card-header-title title__text--readonly"}
-            defaultValue={this.props.data.title}
-            readOnly={!this.state.isEditMode}
+          <input ref={this.initTitleRef} type='text'
+            className={"card-header-title " + (this.state.isEditMode ? "editable" : "readonly")}
+            defaultValue={this.props.data.title} readOnly={!this.state.isEditMode}
             />
         </header>
-
         <div class="card-content">
-
           <textarea ref={this.initDescriptionRef}
-            className={this.state.isEditMode ? "content textarea" : "content textarea description__text--readonly"}
-            defaultValue={this.props.data.description}
-            readOnly={!this.state.isEditMode}
+            className={"textarea content " + (this.state.isEditMode ? "editable" : "readonly")}
+            defaultValue={this.props.data.description} readOnly={!this.state.isEditMode}
             />
         </div>
         <div className="card-footer">
-          <a className='card-footer-item button is-success' type='button' onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}>
-            {this.state.isEditMode ? 'Save' : 'Edit'}
-          </a>
-
-          <a className='card-footer-item button is-danger' type='button' onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}>
-            {this.state.isEditMode ? 'Cancel' : 'Remove'}
-          </a>
-
+          <div className="card-footer-item">
+            <a className="button is-primary is-fullwidth"
+              onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}
+              >{this.state.isEditMode ? 'Save' : 'Edit'}</a>
+          </div>
+          <div className="card-footer-item">
+            <a className="button is-danger is-fullwidth"
+              onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}
+              >{this.state.isEditMode ? 'Cancel' : 'Remove'}</a>
+          </div>
         </div>
       </div>
     </div>
