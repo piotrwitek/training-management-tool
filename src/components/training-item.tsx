@@ -41,33 +41,35 @@ export class TrainingItem extends React.Component<IProps, {}> {
   }
 
   render() {
-    return <div key={this.props.data.uid}  className="training-item">
-      <input ref={this.initTitleRef}
-        type='text'
-        className={this.state.isEditMode ? "input title__text" : "input title__text title__text--readonly"}
-        defaultValue={this.props.data.title}
-        readOnly={!this.state.isEditMode}
-        />
-      <hr/>
-      <textarea ref={this.initDescriptionRef}
-        className={this.state.isEditMode ? "textarea description__text" : "textarea description__text description__text--readonly"}
-        defaultValue={this.props.data.description}
-        readOnly={!this.state.isEditMode}
-        />
-      <hr/>
-      <div className="training-item__footer">
-        <ul>
-          <li>
-            <button className='button is-success' type='button' onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}>
-              {this.state.isEditMode ? 'Save' : 'Edit'}
-            </button>
-          </li>
-          <li>
-            <button className='button is-danger' type='button' onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}>
-              {this.state.isEditMode ? 'Cancel' : 'Remove'}
-            </button>
-          </li>
-        </ul>
+    return <div className="column is-one-third ">
+      <div key={this.props.data.uid}  className="card is-fullwidth">
+        <header className="card-header">
+          <input ref={this.initTitleRef}
+            type='text'
+            className={this.state.isEditMode ? "card-header-title " : "card-header-title title__text--readonly"}
+            defaultValue={this.props.data.title}
+            readOnly={!this.state.isEditMode}
+            />
+        </header>
+
+        <div class="card-content">
+
+          <textarea ref={this.initDescriptionRef}
+            className={this.state.isEditMode ? "content textarea" : "content textarea description__text--readonly"}
+            defaultValue={this.props.data.description}
+            readOnly={!this.state.isEditMode}
+            />
+        </div>
+        <div className="card-footer">
+          <a className='card-footer-item button is-success' type='button' onClick={this.state.isEditMode ? this.handleSave : this.handleEdit}>
+            {this.state.isEditMode ? 'Save' : 'Edit'}
+          </a>
+
+          <a className='card-footer-item button is-danger' type='button' onClick={this.state.isEditMode ? this.handleCancel : this.handleRemove}>
+            {this.state.isEditMode ? 'Cancel' : 'Remove'}
+          </a>
+
+        </div>
       </div>
     </div>
   }
