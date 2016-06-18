@@ -19,8 +19,9 @@
     "regenerator": "cd out && regenerator -r app.transpiled.js > app.regenerator.js",
     "copy-app": "cp out/app.regenerator.js dist/app.js",
     "copy-system": "npm run dev-unbundle && cp jspm_packages/system.js dist/ && cp jspm.config.js dist/",
-    "init-deploy": "git clone https://github.com/piotrwitek/training-management-tool --branch gh-pages dist",
+    "init-deploy": "mkdir dist && git clone https://github.com/piotrwitek/training-management-tool --branch gh-pages dist",
     "deploy": "cd dist && git add --all && git commit -m \"New Release\" && git push",
+    "bd": "npm run build && npm run deploy",
     "uglify": "cd dist && uglifyjs app.js -o app.min.js --screw-ie8 && cd ..",
     "docs": "./node_modules/.bin/typedoc src/ --out docs/ --module system --jsx react --target es6"
   },

@@ -3,12 +3,8 @@ html {
 }
 .readonly, .readonly:hover, .readonly:focus {
     border: 1px solid transparent;
-    resize: none;
-    outline: none;
     text-overflow: ellipsis;
-
 }
 .editable {
-    border: 1px solid grey;
     resize: none;
 }
