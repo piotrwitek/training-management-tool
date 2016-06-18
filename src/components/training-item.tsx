@@ -42,7 +42,7 @@ export class TrainingItem extends React.Component<IProps, {}> {
 
   render() {
     return <div className="column is-one-third ">
-      <div key={this.props.data.uid}  className="card is-fullwidth">
+      <div className="card is-fullwidth">
         <header className="card-header">
           <input ref={this.initTitleRef}
             type='text'
