@@ -41,7 +41,7 @@ export class TrainingItem extends React.Component<IProps, {}> {
   }
 
   render() {
-    return <div className="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen">
+    return <div className="column is-half-tablet is-one-third-desktop">
       <div className="card is-fullwidth">
         <header className="card-header">
           <p className="card-header-title">
