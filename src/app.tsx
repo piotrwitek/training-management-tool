@@ -31,8 +31,8 @@ export class App extends React.Component<{}, {}> {
 
   render() {
     return (
-      <div>
-        <TrainingHeader onAdd={this.handleAdd} />
+      <div className="container">
+      <TrainingHeader onAdd={this.handleAdd} />
         <TrainingList store={this.state.trainingStore} onRemove={this.handleRemove} />
       </div>
     )

@@ -33,21 +33,20 @@ export class TrainingHeader extends React.Component<IProps, IState> {
   }
 
   toggleModal = () => {
-    this.setState({ modalActive: !this.state.modalActive });
+    this.setState({ modalActive: !this.state.modalActive, title: '', description: '' });
   }
 
   render() {
     let buttonDisabled = this.state.title === '' || this.state.description === '';
     return (
-      <div className="training-list">
-        <button type="button" className={'button is-primary'}
+      <div className="hero">
+      <button type="button" className={'button is-primary hero-body'}
           onClick={this.toggleModal}>Add New</button>
-        <div className={"modal" + (this.state.modalActive ? " is-active" : "")}>
-          <div className="modal-background"></div>
+        <div className={"modal" + (this.state.modalActive ? " is-active" : "") }>
+          <div className="modal-background" onClick={this.toggleModal}></div>
           <div className="modal-card">
             <header className="modal-card-head">
               <p className="modal-card-title">Modal title</p>
-              <button className="delete" onClick={this.toggleModal}></button>
             </header>
             <section className="modal-card-body">
               <p className="control">
@@ -58,9 +57,6 @@ export class TrainingHeader extends React.Component<IProps, IState> {
                 <label htmlFor="description" className="label">Description</label>
                 <textarea id="description" className="textarea" type="text" value={this.state.description} onChange={this.handleChangeDescription}></textarea>
               </p>
-              <p className="control is-clearfix">
-
-              </p>
             </section>
             <footer className="modal-card-foot">
               <button type="button" className={'button is-primary is-pulled-right' + (buttonDisabled ? ' is-disabled' : '') }
@@ -68,6 +64,7 @@ export class TrainingHeader extends React.Component<IProps, IState> {
               <a className="button" onClick={this.toggleModal}>Cancel</a>
             </footer>
           </div>
+          <button className="modal-close"></button>
         </div>
       </div>
     );

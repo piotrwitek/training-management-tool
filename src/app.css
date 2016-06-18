@@ -1,156 +1,28 @@
-body {
-    font: 1em/1.67 'Open Sans', Arial, Sans-serif;
-    margin: 0;
+.container {
     background: #e9e9e9;
 }
-.training-list {
-    width: 95%;
-    margin: 3em auto;
-}
-.training-list__container {
-    margin: 1.5em 0;
-    padding: 0;
-    -moz-column-gap: 1.5em;
-    -webkit-column-gap: 1.5em;
-    column-gap: 1.5em;
-    font-size: .85em;
-}
-.training-item {
-    display: inline-block;
-    background: #fff;
-    padding: 1em;
-    margin: 0 0 1.5em;
-    width: 100%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-shadow: 2px 2px 4px 0 #ccc;
-}
 
-.training-item__title {
-    font-size: 2em;
-}
-
-.training-item__title i {
-    float: right;
-    line-height: .5em;
-    color: #ddd;
-}
-
-hr {
-    clear: both;
-}
-
-.training-item__body {
-    font-size: 1.3em;
-}
-
-.description__text {
-    font: inherit;
-    font-size: 1.3em;
-    width: 100%;
-    resize: none;
-	box-shadow: none;
-}
 
 .description__text--readonly {
     border: none;
 }
-
 .title__text {
     font-size: 2em;
     width: 100%;
     margin-top: 10px;
-	box-shadow: none;
+    box-shadow: none;
 }
-
 .title__text--readonly {
     border: none;
     width: 100%;
 }
-
-.training-item__footer ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 1.0em;
-    text-align: center;
+.hero {
+    padding-bottom: 1em;
 }
-.training-item__footer ul li {
-    display: inline;
-    padding: 1em 0.5em;
+.hero-body {
+    font-size: 1.5em;
+    line-height: .5em
 }
-
-@media only screen and (min-width: 400px) {
-    .training-list__container {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-    .training-item__footer ul li {
-        padding: .2em .2em;
-    }
-    .training-item__footer ul li a {
-        padding: .3em .2em;
-    }
-}
-@media only screen and (min-width: 700px) {
-    .training-list__container {
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        column-count: 1;
-    }
-    .training-item__footer ul li {
-        padding: .5em .5em;
-    }
-    .training-item__footer ul li a {
-        padding: .3em .2em;
-    }
-}
-@media only screen and (min-width: 900px) {
-    .training-list__container {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-    .training-item__footer ul li {
-        padding: .5em .5em;
-    }
-    .ttraining-item__footer ul li a {
-        padding: .3em .2em;
-    }
-}
-@media only screen and (min-width: 1100px) {
-    .training-list__container {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
-    }
-}
-@media only screen and (min-width: 1280px) {
-    .training-list {
-        width: 1260px;
-    }
-}
-.app__btn {
-    display: inline;
-    color: black;
-    font-size: 1.0em;
-    padding: .5em .5em;
-    border: 1px solid #ddd;
-    text-align: center;
-    cursor: pointer;
-}
-
-.app__btn--disabled {
-    cursor: not-allowed;
-    color: grey;
-}
-
-.btn--hover-green:hover {
-    background-color: green;
-}
-
-.btn--hover-red:hover {
-    background-color: red;
+.card-header {
+    font-size: 2em
 }
