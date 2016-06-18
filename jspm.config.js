@@ -11,7 +11,8 @@ SystemJS.config({
     "map": {
       "plugin-typescript": "github:frankwallis/plugin-typescript@4.0.16",
       "os": "github:jspm/nodelibs-os@0.2.0-alpha",
-      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0"
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
+      "css": "github:systemjs/plugin-css@0.1.23"
     },
     "packages": {
       "github:frankwallis/plugin-typescript@4.0.16": {
@@ -70,11 +71,9 @@ SystemJS.config({
   map: {
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "buffer": "github:jspm/nodelibs-buffer@0.2.0-alpha",
-    "bulma": "npm:bulma@0.0.28",
     "child_process": "github:jspm/nodelibs-child_process@0.2.0-alpha",
     "constants": "github:jspm/nodelibs-constants@0.2.0-alpha",
     "crypto": "github:jspm/nodelibs-crypto@0.2.0-alpha",
-    "css": "github:systemjs/plugin-css@0.1.23",
     "domain": "github:jspm/nodelibs-domain@0.2.0-alpha",
     "events": "github:jspm/nodelibs-events@0.2.0-alpha",
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
@@ -82,43 +81,18 @@ SystemJS.config({
     "https": "github:jspm/nodelibs-https@0.2.0-alpha",
     "mobx": "npm:mobx@2.2.2",
     "mobx-react": "npm:mobx-react@3.3.1",
-    "os": "github:jspm/nodelibs-os@0.2.0-alpha",
     "path": "github:jspm/nodelibs-path@0.2.0-alpha",
-    "plugin-typescript": "github:frankwallis/plugin-typescript@4.0.16",
     "process": "github:jspm/nodelibs-process@0.2.0-alpha",
     "react": "npm:react@15.1.0",
     "react-dom": "npm:react-dom@15.1.0",
     "stream": "github:jspm/nodelibs-stream@0.2.0-alpha",
     "string_decoder": "github:jspm/nodelibs-string_decoder@0.2.0-alpha",
-    "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
     "url": "github:jspm/nodelibs-url@0.2.0-alpha",
     "util": "github:jspm/nodelibs-util@0.2.0-alpha",
     "vm": "github:jspm/nodelibs-vm@0.2.0-alpha",
     "zlib": "github:jspm/nodelibs-zlib@0.2.0-alpha"
   },
   packages: {
-    "github:capaj/systemjs-hot-reloader@0.6.0": {
-      "map": {
-        "debug": "npm:debug@2.2.0",
-        "socket.io-client": "github:socketio/socket.io-client@1.4.6",
-        "weakee": "npm:weakee@1.0.0"
-      }
-    },
-    "github:frankwallis/plugin-typescript@4.0.16": {
-      "map": {
-        "typescript": "npm:typescript@1.8.10"
-      }
-    },
-    "github:jspm/nodelibs-os@0.2.0-alpha": {
-      "map": {
-        "os-browserify": "npm:os-browserify@0.2.1"
-      }
-    },
-    "npm:debug@2.2.0": {
-      "map": {
-        "ms": "npm:ms@0.7.1"
-      }
-    },
     "github:jspm/nodelibs-buffer@0.2.0-alpha": {
       "map": {
         "buffer-browserify": "npm:buffer@4.6.0"
