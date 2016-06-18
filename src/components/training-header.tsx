@@ -39,8 +39,8 @@ export class TrainingHeader extends React.Component<IProps, IState> {
   render() {
     let buttonDisabled = this.state.title === '' || this.state.description === '';
     return (
-      <div className="training-list">
-        <button type="button" className={'button is-primary'}
+      <div className="hero">
+      <button type="button" className={'button is-primary hero-body'}
           onClick={this.toggleModal}>Add New</button>
         <div className={"modal" + (this.state.modalActive ? " is-active" : "") }>
           <div className="modal-background" onClick={this.toggleModal}></div>
