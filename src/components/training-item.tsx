@@ -14,7 +14,7 @@ interface IState {
 export class TrainingItem extends React.Component<IProps, {}> {
   state: IState = {
     isEditMode: false
-  }
+  };
 
   descriptionRef: HTMLTextAreaElement;
   initDescriptionRef = (ref) => this.descriptionRef = ref;
@@ -45,8 +45,8 @@ export class TrainingItem extends React.Component<IProps, {}> {
       <div className="card is-fullwidth">
         <header className="card-header">
           <p className="card-header-title">
-            <input ref={this.initTitleRef} type='text'
-              className={"input is-large editable " + (this.state.isEditMode ? "" : "readonly") }
+            <input ref={this.initTitleRef} type="text"
+              className={'input is-large editable ' + (this.state.isEditMode ? '' : 'readonly') }
               defaultValue={this.props.data.title} readOnly={!this.state.isEditMode}
               />
           </p>
@@ -54,7 +54,7 @@ export class TrainingItem extends React.Component<IProps, {}> {
         <section class="card-content">
           <p className="card-header-title">
             <textarea ref={this.initDescriptionRef}
-              className={"textarea editable " + (this.state.isEditMode ? "" : "readonly") }
+              className={'textarea editable ' + (this.state.isEditMode ? '' : 'readonly') }
               defaultValue={this.props.data.description} readOnly={!this.state.isEditMode}
               />
           </p>
@@ -72,6 +72,6 @@ export class TrainingItem extends React.Component<IProps, {}> {
           </div>
         </footer>
       </div>
-    </div>
+    </div>;
   }
 };

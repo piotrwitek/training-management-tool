@@ -17,7 +17,7 @@ interface IState {
 export class App extends React.Component<{}, {}> {
   state: IState = {
     trainingStore: new TrainingStore()
-  }
+  };
 
   handleAdd = (title: string, description: string) => {
     this.state.trainingStore.addItem(title, description);
@@ -35,7 +35,7 @@ export class App extends React.Component<{}, {}> {
         <TrainingHeader onAdd={this.handleAdd} />
         <TrainingList store={this.state.trainingStore} onRemove={this.handleRemove} />
       </div>
-    )
+    );
   }
 }
 
