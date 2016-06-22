@@ -1,11 +1,8 @@
 export class TrainingStore {
-  state: TrainingModel[] = initialState;
-
-  removeItem = (uid: number) => {
-    let newState = this.state.filter((item) => item.uid !== uid);
-
-    this.state = newState;
+  constructor(initialState: TrainingModel[]) {
+    this.state = initialState;
   }
+  state: TrainingModel[];
 
   addItem = (title: string, description: string) => {
     let newItem = new TrainingModel(title, description);
@@ -21,12 +18,17 @@ export class TrainingStore {
     existingItem.description = description;
   }
 
+  removeItem = (uid: number) => {
+    let newState = this.state.filter((item) => item.uid !== uid);
+
+    this.state = newState;
+  }
 }
 
-let counter = 0;
+let uidIterator = 0;
 
 export class TrainingModel {
-  uid: number = counter++;
+  uid: number = uidIterator++;
   title: string;
   description: string;
   constructor(title: string, description: string) {
@@ -34,9 +36,3 @@ export class TrainingModel {
     this.description = description;
   }
 }
-
-const initialState: TrainingModel[] = [
-  new TrainingModel('fake training 1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.'),
-  new TrainingModel('fake training 2', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.'),
-  new TrainingModel('fake training 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.')
-];

@@ -1,6 +1,6 @@
 {
   "name": "training-management-tool",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "training-management-tool",
   "main": "server.js",
   "repository": {
@@ -8,12 +8,11 @@
   },
   "scripts": {
     "start": "node server.js",
-    "postinstall": "npm run install-jspm && npm run install-typings && npm run install-hooks && mkdir dist",
+    "postinstall": "npm run install-jspm && npm run install-typings && mkdir dist",
     "precommit": "npm run lint",
     "prepush": "npm run lint && npm test",
     "install-jspm": "./node_modules/.bin/jspm install",
     "install-typings": "./node_modules/.bin/typings install",
-    "install-hooks": "node ./git-hooks/install-hooks.js",
     "dev-bundle": "./node_modules/.bin/jspm bundle dev-bundle.ts dev-bundle.js -id",
     "dev-unbundle": "./node_modules/.bin/jspm unbundle",
     "build": "./node_modules/.bin/jspm bundle src/app out/app.transpiled.js --minify --skip-source-maps && npm run regenerator && npm run copy-app && npm run copy-system",
@@ -24,7 +23,7 @@
     "init-deploy": "mkdir dist && git clone https://github.com/piotrwitek/training-management-tool --branch gh-pages dist",
     "deploy": "cd dist && git add --all && git commit -m \"New Release\" && git push",
     "bd": "npm run build && npm run deploy",
-    "test": "echo test successful!",
+    "test": "ts-node -P ./tests/ ./tests/run-tests.ts",
     "lint": "tslint ./src/**/*.ts*",
     "uglify": "cd dist && uglifyjs app.js -o app.min.js --screw-ie8 && cd ..",
     "docs": "./node_modules/.bin/typedoc src/ --out docs/ --module system --jsx react --target es6"
@@ -37,6 +36,7 @@
     "http-server": "^0.9.0",
     "husky": "^0.11.4",
     "jspm": "^0.17.0-beta.22",
+    "ts-node": "^0.9.3",
     "typedoc": "^0.4.3",
     "typings": "^1.3.0"
   },
