@@ -4,11 +4,13 @@
 
 ### Features:
 - using ES2016 (generators/async/await) then transpiled to ES5 cross-browser compatible code
-- ES6 modules hot-reload for quick development loop
-- static dev-bundle for fast full-page reload
+- development server with hot-reload for quick development loop
+- static dev-bundle for quick full-page reload
 - automatic build of optimized production package and deployment: `npm run bd`
-- development workflow with code linter and test runner
+- unit test with simple test runner in TypeScript
+- typescript node support using ts-node
 - git hooks running linter before commit and tests before push
+- editorconfig and tslint as code linter
 
 ### Stack:
 - TypeScript - v1.8.10
