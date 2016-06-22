@@ -19,11 +19,11 @@
     if (location.origin.match(/localhost/)) {
       System.trace = true;
       System.import('systemjs-hot-reloader').then(function(HotReloader) {
-        new HotReloader.default('http://localhost:8888');  // chokidar-socket-emitter port
+        new HotReloader.default('http://localhost:8888'); // chokidar-socket-emitter port
       });
     }
     System.import('src/app');
   </script>
 </body>
 
-</html>
+</html>

@@ -1,13 +1,12 @@
 'use strict'
 const httpServer = require('http-server');
 
-console.log('Hot-reload via jspm');
-
-var cache = 3600
+// default cache disabled
+let cache = -1;
 if (process.env.NODE_ENV === 'production') {
-  console.log('running in production mode(with caching)-make sure you have "Disable cache (while DevTools is open)" checked in the browser to see the changes while developing')
-} else {
-  cache = -1
+  cache = 3600;
+  const msg = 'Running in production mode (caching is enabled)';
+  console.log(msg);
 }
 
 const server = httpServer.createServer({
@@ -23,3 +22,5 @@ const server = httpServer.createServer({
 require('chokidar-socket-emitter')({app: server.server});
 
 server.listen(8888);
+console.log('Started http-server with chokidar-socket-emitter');
+console.log('Running on localhost:8888');

@@ -1,15 +1,16 @@
 {
   "name": "training-management-tool",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "description": "training-management-tool",
   "main": "server.js",
   "repository": {
     "url": "https://github.com/piotrwitek/training-management-tool"
   },
   "scripts": {
-    "start": "start npm run server",
-    "server": "node server.js",
+    "start": "node server.js",
     "postinstall": "npm run install-jspm && npm run install-typings && mkdir dist",
+    "precommit": "npm run lint",
+    "prepush": "npm run lint && npm test",
     "install-jspm": "./node_modules/.bin/jspm install",
     "install-typings": "./node_modules/.bin/typings install",
     "dev-bundle": "./node_modules/.bin/jspm bundle dev-bundle.ts dev-bundle.js -id",
@@ -22,16 +23,20 @@
     "init-deploy": "mkdir dist && git clone https://github.com/piotrwitek/training-management-tool --branch gh-pages dist",
     "deploy": "cd dist && git add --all && git commit -m \"New Release\" && git push",
     "bd": "npm run build && npm run deploy",
+    "test": "ts-node -P ./tests/ ./tests/run-tests.ts",
+    "lint": "tslint ./src/**/*.ts*",
     "uglify": "cd dist && uglifyjs app.js -o app.min.js --screw-ie8 && cd ..",
     "docs": "./node_modules/.bin/typedoc src/ --out docs/ --module system --jsx react --target es6"
   },
   "author": "Piotr Witek <piotrek.witek@gmail.com>",
   "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
     "chokidar-socket-emitter": "^0.5.2",
     "http-server": "^0.9.0",
+    "husky": "^0.11.4",
     "jspm": "^0.17.0-beta.22",
-    "jspm-server": "^1.0.1",
+    "ts-node": "^0.9.3",
     "typedoc": "^0.4.3",
     "typings": "^1.3.0"
   },
