@@ -26,7 +26,7 @@
     "test": "ts-node -P ./tests/ ./tests/run-tests.ts",
     "lint": "tslint ./src/**/*.ts*",
     "uglify": "cd dist && uglifyjs app.js -o app.min.js --screw-ie8 && cd ..",
-    "docs": "./node_modules/.bin/typedoc src/ --out docs/ --module system --jsx react --target es6"
+    "docs": "./node_modules/.bin/typedoc src/ --out docs/ --module system --jsx react --target es6 --experimentalDecorators"
   },
   "author": "Piotr Witek <piotrek.witek@gmail.com>",
   "license": "MIT",
