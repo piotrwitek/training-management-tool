@@ -22,7 +22,7 @@
     "copy-app": "cp out/app.regenerator.js dist/app.js",
     "copy-system": "npm run dev-unbundle && cp jspm_packages/system.js dist/ && cp jspm.config.js dist/",
     "init-deploy": "mkdir dist && git clone https://github.com/piotrwitek/training-management-tool --branch gh-pages dist",
-    "deploy": "cd dist && git add --all && git commit -m \"New Release\" && git push",
+    "deploy": "cd dist && git checkout gh-pages && git add --all && git commit -m \"New Release\" && git push",
     "bd": "npm run build && npm run deploy",
     "test": "ts-node -P ./tests/ ./tests/run-tests.ts",
     "lint": "tslint ./src/**/*.ts*",

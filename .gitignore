@@ -31,6 +31,7 @@ jspm_packages
 typings
 out
 dist
+dist/**/*
 docs
 dev-bundle.js*
 
