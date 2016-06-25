@@ -13,7 +13,7 @@
     "prepush": "npm run lint && npm test",
     "install-jspm": "./node_modules/.bin/jspm install",
     "install-typings": "./node_modules/.bin/typings install",
-    "bundle-dev-inject": "./node_modules/.bin/jspm bundle dev-bundle.ts dev-bundle.js -id",
+    "bundle-dev-inject": "./node_modules/.bin/jspm bundle dev-bundle.config.js out/dev-bundle.js -id",
     "unbundle": "./node_modules/.bin/jspm unbundle",
     "bundle-deps": "./node_modules/.bin/jspm bundle react + react-dom + mobx + mobx-react dist/deps-bundle.js --minify --skip-source-maps",
     "bundle-app": "./node_modules/.bin/jspm bundle src/app - react-dom - mobx - mobx-react dist/app.js --minify --skip-source-maps",
