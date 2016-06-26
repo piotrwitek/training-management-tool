@@ -23,13 +23,12 @@
   "filesGlob": [
     "**/*.ts",
     "**/*.tsx",
-    "!node_modules/**",
-    "../typings/index.d.ts"
+    "!node_modules/**"
   ],
   "files": [
     "components/training-store.ts",
     "run-tests.ts",
-    "../typings/index.d.ts"
+    "tests-typings.d.ts"
   ],
   "atom": {
     "rewriteTsconfig": true,

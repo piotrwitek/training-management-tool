@@ -10,7 +10,6 @@ SystemJS.config({
   devConfig: {
     "map": {
       "plugin-typescript": "github:frankwallis/plugin-typescript@4.0.16",
-      "os": "github:jspm/nodelibs-os@0.2.0-alpha",
       "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.6.0",
       "css": "github:systemjs/plugin-css@0.1.23"
     },
@@ -18,11 +17,6 @@ SystemJS.config({
       "github:frankwallis/plugin-typescript@4.0.16": {
         "map": {
           "typescript": "npm:typescript@1.8.10"
-        }
-      },
-      "github:jspm/nodelibs-os@0.2.0-alpha": {
-        "map": {
-          "os-browserify": "npm:os-browserify@0.2.1"
         }
       },
       "github:capaj/systemjs-hot-reloader@0.6.0": {
@@ -79,8 +73,10 @@ SystemJS.config({
     "fs": "github:jspm/nodelibs-fs@0.2.0-alpha",
     "http": "github:jspm/nodelibs-http@0.2.0-alpha",
     "https": "github:jspm/nodelibs-https@0.2.0-alpha",
-    "mobx": "npm:mobx@2.2.2",
+    "mobx": "npm:mobx@2.3.3",
     "mobx-react": "npm:mobx-react@3.3.1",
+    "node-uuid": "npm:node-uuid@1.4.7",
+    "os": "github:jspm/nodelibs-os@0.2.0-alpha",
     "path": "github:jspm/nodelibs-path@0.2.0-alpha",
     "process": "github:jspm/nodelibs-process@0.2.0-alpha",
     "react": "npm:react@15.1.0",
@@ -95,7 +91,7 @@ SystemJS.config({
   packages: {
     "github:jspm/nodelibs-buffer@0.2.0-alpha": {
       "map": {
-        "buffer-browserify": "npm:buffer@4.6.0"
+        "buffer-browserify": "npm:buffer@4.7.0"
       }
     },
     "github:jspm/nodelibs-domain@0.2.0-alpha": {
@@ -132,13 +128,6 @@ SystemJS.config({
       "map": {
         "pako": "npm:pako@0.2.8",
         "readable-stream": "npm:readable-stream@2.1.4"
-      }
-    },
-    "npm:buffer@4.6.0": {
-      "map": {
-        "base64-js": "npm:base64-js@1.1.2",
-        "ieee754": "npm:ieee754@1.1.6",
-        "isarray": "npm:isarray@1.0.0"
       }
     },
     "npm:encoding@0.1.12": {
@@ -205,7 +194,7 @@ SystemJS.config({
         "parse-asn1": "npm:parse-asn1@5.0.0",
         "browserify-rsa": "npm:browserify-rsa@4.0.1",
         "bn.js": "npm:bn.js@4.11.4",
-        "elliptic": "npm:elliptic@6.2.8"
+        "elliptic": "npm:elliptic@6.3.1"
       }
     },
     "npm:create-hmac@1.1.4": {
@@ -267,7 +256,7 @@ SystemJS.config({
     "npm:create-ecdh@4.0.0": {
       "map": {
         "bn.js": "npm:bn.js@4.11.4",
-        "elliptic": "npm:elliptic@6.2.8"
+        "elliptic": "npm:elliptic@6.3.1"
       }
     },
     "npm:parse-asn1@5.0.0": {
@@ -306,14 +295,6 @@ SystemJS.config({
       "map": {
         "randombytes": "npm:randombytes@2.0.3",
         "bn.js": "npm:bn.js@4.11.4"
-      }
-    },
-    "npm:elliptic@6.2.8": {
-      "map": {
-        "inherits": "npm:inherits@2.0.1",
-        "bn.js": "npm:bn.js@4.11.4",
-        "brorand": "npm:brorand@1.0.5",
-        "hash.js": "npm:hash.js@1.0.3"
       }
     },
     "npm:des.js@1.0.0": {
@@ -372,6 +353,26 @@ SystemJS.config({
         "string_decoder": "npm:string_decoder@0.10.31",
         "process-nextick-args": "npm:process-nextick-args@1.0.7",
         "buffer-shims": "npm:buffer-shims@1.0.0"
+      }
+    },
+    "github:jspm/nodelibs-os@0.2.0-alpha": {
+      "map": {
+        "os-browserify": "npm:os-browserify@0.2.1"
+      }
+    },
+    "npm:elliptic@6.3.1": {
+      "map": {
+        "bn.js": "npm:bn.js@4.11.4",
+        "inherits": "npm:inherits@2.0.1",
+        "brorand": "npm:brorand@1.0.5",
+        "hash.js": "npm:hash.js@1.0.3"
+      }
+    },
+    "npm:buffer@4.7.0": {
+      "map": {
+        "ieee754": "npm:ieee754@1.1.6",
+        "base64-js": "npm:base64-js@1.1.2",
+        "isarray": "npm:isarray@1.0.0"
       }
     }
   }

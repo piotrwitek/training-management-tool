@@ -18,30 +18,50 @@ class AssertHelper {
 }
 
 let trainingStore: TrainingStore;
-// test addItem
+
+// prepare
 const addItemAssertHelper = new AssertHelper();
 trainingStore = new TrainingStore(getInitialState());
+addItemAssertHelper.assert(trainingStore.state.length === 3);
+// addItem
 const title = 'new item title';
 const description = 'new item description';
-addItemAssertHelper.assert(trainingStore.state.length === 3);
-
 trainingStore.addItem(title, description);
+// assert
 addItemAssertHelper.assert(trainingStore.state.length === 4);
 let addedItem = trainingStore.state.slice(-1).pop();
 addItemAssertHelper.assert(addedItem.title === title);
 addItemAssertHelper.assert(addedItem.description === description);
 console.log(`TrainingStore.addItem -> ${addItemAssertHelper.passed}/${addItemAssertHelper.runned}`);
 
-// remove item
+// prepare
 const removeItemAssertHelper = new AssertHelper();
 trainingStore = new TrainingStore(getInitialState());
-const firstItem = trainingStore.state.slice(0, 1).pop();
-const uid = firstItem.uid;
 removeItemAssertHelper.assert(trainingStore.state.length === 3);
-
-trainingStore.removeItem(uid);
+// removeItem
+const removedItem = trainingStore.state.slice(0, 1).pop();
+trainingStore.removeItem(removedItem.uid);
+// assert
 removeItemAssertHelper.assert(trainingStore.state.length === 2);
 console.log(`TrainingStore.removeItem -> ${removeItemAssertHelper.passed}/${removeItemAssertHelper.runned}`);
 
-export let failed = addItemAssertHelper.failed + removeItemAssertHelper.failed;
-export let passed = addItemAssertHelper.passed + removeItemAssertHelper.passed;
+// prepare
+const editItemAssertHelper = new AssertHelper();
+trainingStore = new TrainingStore(getInitialState());
+editItemAssertHelper.assert(trainingStore.state.length === 3);
+const preEditedItem = trainingStore.state.slice(0, 1).pop();
+// editItem
+const newTitle = 'new item title';
+const newDescription = 'new item description';
+trainingStore.editItem(preEditedItem.uid, newTitle, newDescription);
+// assert
+const editedItem = trainingStore.state.slice(0, 1).pop();
+editItemAssertHelper.assert(trainingStore.state.length === 3);
+editItemAssertHelper.assert(editedItem.uid === preEditedItem.uid);
+editItemAssertHelper.assert(editedItem.title === newTitle);
+editItemAssertHelper.assert(editedItem.description === newDescription);
+console.log(`TrainingStore.editItem -> ${editItemAssertHelper.passed}/${editItemAssertHelper.runned}`);
+
+
+export let failed = addItemAssertHelper.failed + removeItemAssertHelper.failed + editItemAssertHelper.failed;
+export let passed = addItemAssertHelper.passed + removeItemAssertHelper.passed + editItemAssertHelper.passed;

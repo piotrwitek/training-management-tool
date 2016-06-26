@@ -1,4 +1,5 @@
 /// <reference path="../typings/index.d.ts" />
+
 declare const System: any;
 
 declare module 'mobx' {
@@ -6,12 +7,7 @@ declare module 'mobx' {
   export const computed: any;
   export const autorun: any;
 }
+
 declare module 'mobx-react' {
   export const observer: any;
-}
-
-type Todo = {
-  uid: number;
-  title: string;
-  completed: boolean;
 }
